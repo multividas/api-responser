@@ -1,0 +1,52 @@
+{
+    "name": "soulaimaneyh/api-responser",
+    "description": "API-Responser is a PHP package that simplifies the process of building APIs",
+    "keywords": ["API Response", "JSON", "Response", "PHP JSON"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "soulaimane yahya",
+            "email": "soulaimaneyahya1@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Soulaimaneyh\\ApiResponser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Soulaimaneyh\\ApiResponser\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests/Feature",
+        "php-psr": [
+            "./vendor/bin/phpcs src/Interfaces/ApiRepositoryInterface.php --standard=PSR2",
+            "./vendor/bin/phpcs src/Repositories/ApiRepository.php --standard=PSR2",
+            "./vendor/bin/phpcs src/Traits/ApiResponser.php --standard=PSR2",
+            "./vendor/bin/phpcs src/Providers/ApiServiceProvider.php --standard=PSR2",
+            "./vendor/bin/phpcs tests/Providers/ApiServiceProvider.php --standard=PSR2"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "dev-develop",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpunit/phpunit": "^9.6"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Soulaimaneyh\\ApiResponser\\Providers\\ApiServiceProvider"
+            ]
+        }
+    }
+}
