@@ -7,10 +7,10 @@ use Soulaimaneyh\ApiResponser\Repositories\ApiRepository;
 
 class ApiResponserTest extends BaseTest
 {
-    public function testApiResponser()
+    public function testApiResponserShowAll()
     {
         $apiRepository = new ApiRepository();
-        
+
         $response = $apiRepository->showAll(collect([
             [
                 'id' => 1,
