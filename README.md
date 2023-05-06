@@ -2,13 +2,28 @@
 
 API-Responser is a PHP package that simplifies the process of building APIs
 
+## Installation
+Require this package with composer. It is recommended to only require the package for development.
+
+```shell
+composer require soulaimaneyh/api-responser --dev
+```
+
+# ServiceProvider:
+
+Add the **ApiServiceProvider** to the providers array in config/app.php
+```php
+[
+    ApiServiceProvider::class,
+]
+```
 
 ## Usage
 
 ```php
 class Controller extends BaseController
 {
-    use ApiResponser;
+    use \Soulaimaneyh\ApiResponser\Traits\ApiResponser;
 }
 ```
 
@@ -18,7 +33,7 @@ The code defines a PHP class UsersController that extends a Controller class and
 class UsersController extends Controller
 {
     public function __construct(
-        protected ApiRepositoryInterface $apiRepository
+        protected \Soulaimaneyh\ApiResponser\Interfaces\ApiRepositoryInterface $apiRepository
     ) {
     }
 
@@ -40,9 +55,7 @@ class UsersController extends Controller
 
 ## Response format
 
-The API endpoint will respond with a JSON object that contains a status field, a message field, a data field, and a statusCode field. The status field will indicate the success or failure of the request, while the message field will provide additional details about the result. The data field will contain any additional data that is returned by the endpoint. The statusCode field will contain the HTTP status code for the response.
-
-Here is an example of a successful response:
+Response: [200]
 
 ```json
 {
@@ -54,13 +67,42 @@ Here is an example of a successful response:
 }
 ```
 
-Otherwise
+Response: [404]
 
 ```json
 {
     "error": "Item Not Found",
     "code": 404
 }
+```
+
+### Filters
+
+```
+GET /products?filters[0][field]=status&filters[0][value]=active&filters[1][field]=vendor&filters[1][value]=soulaimaneyahya
+```
+
+### Paginate
+
+Use `page` and optionally `per_page` to paginate returned data.
+
+In the `Link` header you'll get `first`, `prev`, `next` and `last` links.
+
+
+```
+GET /products?page=7
+GET /products?page=7&per_page=20
+```
+
+_10 items are returned by default_
+
+### Sort
+
+Add `_sort` and `_order` (ascending order by default)
+
+```
+GET /products?_sort=id&_order=asc
+GET /products?_sort=price&_order=asc
 ```
 
 ---
