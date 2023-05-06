@@ -65,29 +65,6 @@ class UsersController extends Controller
 }
 ```
 
-## Response format
-
-Response: [200]
-
-```json
-{
-    "data": {
-        "id": 8,
-        "name": "Mr. Domenick Stroman I",
-        "email": "legros.juana@example.org"
-    }
-}
-```
-
-Response: [404]
-
-```json
-{
-    "error": "Item Not Found",
-    "code": 404
-}
-```
-
 ### Filters
 
 ```
@@ -115,6 +92,29 @@ Add `_sort` and `_order` (ascending order by default)
 ```
 GET /products?_sort=id&_order=asc
 GET /products?_sort=price&_order=asc
+```
+
+## Response format
+
+Response: [200]
+
+```json
+{
+    "data": {
+        "id": 8,
+        "name": "Mr. Domenick Stroman I",
+        "email": "legros.juana@example.org"
+    }
+}
+```
+
+Response: [404]
+
+```json
+{
+    "error": "Item Not Found",
+    "code": 404
+}
 ```
 
 ---
