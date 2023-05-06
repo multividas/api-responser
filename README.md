@@ -2,8 +2,8 @@
 
 <p align="center">
 <a href="https://github.com/soulaimaneyahya/api-responser"><img src="./assets/tests.svg" alt="Tests"></a>
-<a href="https://packagist.org/packages/soulaimaneyh/api-responser"><img src="./assets/version.svg" alt="Version"></a>
-<a href="https://github.com/soulaimaneyahya/api-responser"><img src="./assets/license.svg" alt="License"></a>
+<a href="https://packagist.org/packages/soulaimaneyh/api-responser" target="_blank"><img src="./assets/version.svg" alt="Version"></a>
+<a href="https://github.com/soulaimaneyahya/api-responser/blob/main/LICENSE" target="_blank"><img src="./assets/license.svg" alt="License"></a>
 </p>
 
 API-Responser is a PHP package that simplifies the process of building APIs
