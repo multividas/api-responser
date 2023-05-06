@@ -76,7 +76,7 @@ class ApiRepository implements ApiRepositoryInterface
 		if (request()->has('per_page')) {
 			$perPage = (int) request()->per_page;
 		}
-		
+
 		$page = LengthAwarePaginator::resolveCurrentPage();
 		$results = $collection->slice(($page - 1) * $perPage, $perPage)->values();
 

@@ -1,5 +1,11 @@
 # API Responser
 
+<p align="center">
+<a href="https://github.com/soulaimaneyahya/api-responser"><img src="./assets/tests.svg" alt="Tests"></a>
+<a href="https://packagist.org/packages/soulaimaneyh/api-responser"><img src="./assets/version.svg" alt="Version"></a>
+<a href="https://github.com/soulaimaneyahya/api-responser"><img src="./assets/license.svg" alt="License"></a>
+</p>
+
 API-Responser is a PHP package that simplifies the process of building APIs
 
 ## Installation
@@ -16,6 +22,12 @@ Add the **ApiServiceProvider** to the providers array in config/app.php
 [
     ApiServiceProvider::class,
 ]
+```
+
+To get **X-Application-Name** header, Copy the package config to your local config with the publish command:
+
+```sh
+php artisan vendor:publish --tag=api-responser-config
 ```
 
 ## Usage
