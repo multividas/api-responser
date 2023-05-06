@@ -20,7 +20,7 @@ composer require soulaimaneyh/api-responser --dev
 Add the **ApiServiceProvider** to the providers array in config/app.php
 ```php
 [
-    ApiServiceProvider::class,
+    \Soulaimaneyh\ApiResponser\Providers\ApiServiceProvider::class,
 ]
 ```
 
