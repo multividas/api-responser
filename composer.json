@@ -27,7 +27,7 @@
             "./vendor/bin/phpcs src/Repositories/ApiRepository.php --standard=PSR2",
             "./vendor/bin/phpcs src/Traits/ApiResponser.php --standard=PSR2",
             "./vendor/bin/phpcs src/Providers/ApiServiceProvider.php --standard=PSR2",
-            "./vendor/bin/phpcs tests/Providers/ApiServiceProvider.php --standard=PSR2"
+            "./vendor/bin/phpcs tests/Feature/ApiResponserTest.php --standard=PSR2"
         ]
     },
     "minimum-stability": "dev",
