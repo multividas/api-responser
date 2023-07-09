@@ -25,7 +25,6 @@ class ApiRepository implements ApiRepositoryInterface
         $collection = $this->filterData($collection);
         $collection = $this->sortData($collection);
         $collection = $this->paginate($collection);
-        $collection = $this->cacheResponse($collection);
 
         return $this->successResponse($collection, $code);
     }

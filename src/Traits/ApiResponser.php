@@ -3,12 +3,13 @@
 namespace Soulaimaneyh\ApiResponser\Traits;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 trait ApiResponser
 {
     public int $options = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE;
 
-    protected function successResponse(array $data, int $code): JsonResponse
+    protected function successResponse(array|LengthAwarePaginator $data, int $code): JsonResponse
     {
         return new JsonResponse($data, $code, [
             'Content-Type' => 'application/json',
