@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Soulaimaneyh\ApiResponser\Traits\ApiResponser;
 use Soulaimaneyh\ApiResponser\Interfaces\ApiRepositoryInterface;
 
@@ -16,7 +17,7 @@ class ApiRepository implements ApiRepositoryInterface
 {
     use ApiResponser;
 
-    public function showAll(Collection $collection, $code = 200): JsonResponse
+    public function showAll(Collection|JsonResource $collection, $code = 200): JsonResponse
     {
         if ($collection->isEmpty()) {
             return $this->successResponse(['data' => $collection], $code);
@@ -29,14 +30,14 @@ class ApiRepository implements ApiRepositoryInterface
         return $this->successResponse($collection, $code);
     }
 
-    public function showOne(Model $instance, $code = 200): JsonResponse
+    public function showOne(Model|JsonResource $instance, $code = 200): JsonResponse
     {
         return $this->successResponse([
             'data' => $instance
         ], $code);
     }
 
-    protected function filterData(Collection $collection): Collection
+    protected function filterData(Collection|JsonResource $collection): Collection|JsonResource
     {
         if (isset(request()->query()['filters'])) {
             foreach (request()->query()['filters'] as $query) {
@@ -47,7 +48,7 @@ class ApiRepository implements ApiRepositoryInterface
         return $collection;
     }
 
-    protected function sortData(Collection $collection): Collection
+    protected function sortData(Collection|JsonResource $collection): Collection|JsonResource
     {
         if (request()->has('_sort')) {
             $sortField = request()->_sort;
@@ -62,7 +63,7 @@ class ApiRepository implements ApiRepositoryInterface
     /**
      * @return array|LengthAwarePaginator
      */
-    protected function paginate(Collection $collection)
+    protected function paginate(Collection|JsonResource $collection)
     {
         $rules = [
             'per_page' => 'integer|min:2|max:50',
