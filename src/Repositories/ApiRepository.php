@@ -25,7 +25,7 @@ class ApiRepository implements ApiRepositoryInterface
 
         if ($collection instanceof Collection) {
             $transformer = $collection->first()?->transformer ?? null;
-        } else if ($collection instanceof JsonResource) {
+        } elseif ($collection instanceof JsonResource) {
             $transformer = $collection->collects ?? null;
         }
 
