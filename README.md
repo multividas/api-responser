@@ -32,9 +32,11 @@ php artisan vendor:publish --tag=api-responser-config
 ## Usage
 
 ```php
+use \Soulaimaneyh\ApiResponser\Traits\ApiResponser;
+
 class Controller extends BaseController
 {
-    use \Soulaimaneyh\ApiResponser\Traits\ApiResponser;
+    use ApiResponser;
 }
 ```
 
@@ -45,11 +47,13 @@ UsersController has __construct() method initializes a property apiRepository wi
 `showOne()` method receives **`Model|JsonResource $instance`** as its param.
 
 ```php
+use \Soulaimaneyh\ApiResponser\Interfaces\ApiRepositoryInterface;
+
 class UsersController extends Controller
 {
-    public function __construct(
-        protected \Soulaimaneyh\ApiResponser\Interfaces\ApiRepositoryInterface $apiRepository
-    ) {
+    public function __construct(ApiRepositoryInterface $apiRepository)
+    {
+        $this->apiRepository = $apiRepository;
     }
 
     public function index()

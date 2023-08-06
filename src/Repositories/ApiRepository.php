@@ -23,8 +23,14 @@ class ApiRepository implements ApiRepositoryInterface
             return $this->successResponse(['data' => $collection], $code);
         }
 
-        $collection = $this->filterData($collection);
-        $collection = $this->sortData($collection);
+        if ($collection instanceof Collection) {
+            $transformer = $collection->first()?->transformer ?? null;
+        } else if ($collection instanceof JsonResource) {
+            $transformer = $collection->collects ?? null;
+        }
+
+        $collection = $this->filterData($collection, $transformer);
+        $collection = $this->sortData($collection, $transformer);
         $collection = $this->paginate($collection);
 
         return $this->successResponse($collection, $code);
@@ -37,21 +43,32 @@ class ApiRepository implements ApiRepositoryInterface
         ], $code);
     }
 
-    protected function filterData(Collection|JsonResource $collection): Collection|JsonResource
+    protected function filterData(Collection|JsonResource $collection, ?string $transformer): Collection|JsonResource
     {
         if (isset(request()->query()['filters'])) {
             foreach (request()->query()['filters'] as $query) {
-                $collection = $collection->where($query['field'], $query['value']);
+                if (!is_null($transformer) && is_callable([$transformer, 'originalAttribute'])) {
+                    $queryField = $transformer::originalAttribute($query['field']);
+                } else {
+                    $queryField = $query['field'];
+                }
+
+                $collection = $collection->where($queryField, $query['value']);
             }
         }
 
         return $collection;
     }
 
-    protected function sortData(Collection|JsonResource $collection): Collection|JsonResource
+    protected function sortData(Collection|JsonResource $collection, ?string $transformer): Collection|JsonResource
     {
         if (request()->has('_sort')) {
-            $sortField = request()->_sort;
+            if (!is_null($transformer) && is_callable([$transformer, 'originalAttribute'])) {
+                $sortField = $transformer::originalAttribute(request()->_sort);
+            } else {
+                $sortField = request()->_sort;
+            }
+
             $sortOrder = request()->has('_order') && request()->_order == 'desc' ? true : false;
 
             $collection = $collection->sortBy($sortField, SORT_REGULAR, $sortOrder);
