@@ -15,13 +15,12 @@ Require this package with composer. It is recommended to only require the packag
 composer require soulaimaneyh/api-responser --dev
 ```
 
-# ServiceProvider:
+## ServiceProvider:
 
 Add the **ApiServiceProvider** to the providers array in config/app.php
 ```php
-[
-    \Soulaimaneyh\ApiResponser\Providers\ApiServiceProvider::class,
-]
+// ...
+Soulaimaneyh\ApiResponser\Providers\ApiServiceProvider::class
 ```
 
 To get **X-Application-Name** header, Copy the package config to your local config with the publish command:
@@ -39,7 +38,11 @@ class Controller extends BaseController
 }
 ```
 
-The code defines a PHP class UsersController that extends a Controller class and has two public methods, index() and show(). The __construct() method initializes a property apiRepository with an instance of the ApiRepositoryInterface and the index() and show() methods use this property to retrieve and return data from the database.
+UsersController has __construct() method initializes a property apiRepository with an instance of the ApiRepositoryInterface.
+
+`showAll()` method receives **`Collection|JsonResource`** as its param.
+
+`showOne()` method receives **`Model|JsonResource $instance`** as its param.
 
 ```php
 class UsersController extends Controller
@@ -65,65 +68,12 @@ class UsersController extends Controller
 }
 ```
 
-### Filters
-
-```
-GET /products?filters[0][field]=status&filters[0][value]=active&filters[1][field]=vendor&filters[1][value]=soulaimaneyahya
-```
-
-### Paginate
-
-Use `page` and optionally `per_page` to paginate returned data.
-
-In the `Link` header you'll get `first`, `prev`, `next` and `last` links.
-
-
-```
-GET /products?page=7
-GET /products?page=7&per_page=20
-```
-
-_10 items are returned by default_
-
-### Sort
-
-Add `_sort` and `_order` (ascending order by default)
-
-```
-GET /products?_sort=id&_order=asc
-GET /products?_sort=price&_order=asc
-```
-
-## Response format
-
-Response: [200]
-
-```json
-{
-    "data": {
-        "id": 8,
-        "name": "Mr. Domenick Stroman I",
-        "email": "legros.juana@example.org"
-    }
-}
-```
-
-Response: [404]
-
-```json
-{
-    "error": "Item Not Found",
-    "code": 404
-}
-```
-
 ---
 
 Need helps? Reach me out
 
-> Email: soulaimaneyahya1@gmail.com
+> Email: contact@soulaimaneyahya.com
 
 > Linkedin: soulaimane-yahya
 
-All the best :beer:
-
+✨👽
