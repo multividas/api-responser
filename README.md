@@ -78,16 +78,16 @@ class PostsController extends Controller
 
 ### Facades
 
-Using the `ApiRepositoryFacade` to access the methods of `ApiRepositoryInterface` in your `PostsController`.
+Using the `ApiResponser` to access the methods of `ApiRepositoryInterface` in your `PostsController`.
 
 ```php
-use Multividas\ApiResponser\Facades\ApiRepositoryFacade;
+use Multividas\ApiResponser\Facades\ApiResponser;
 
 class PostsController extends Controller
 {
     public function index(): JsonResponse
     {
-        return ApiRepositoryFacade::showAll(Post::all());
+        return ApiResponser::showAll(Post::all());
     }
 
     public function show(string $postId): JsonResponse
@@ -98,7 +98,7 @@ class PostsController extends Controller
             return $this->infoResponse('Post Not Found', 404, (object)[]);
         }
 
-        return ApiRepositoryFacade::showOne($post);
+        return ApiResponser::showOne($post);
     }
 }
 ```

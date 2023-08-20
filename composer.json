@@ -49,7 +49,7 @@
                 "Multividas\\ApiResponser\\Providers\\ApiResponserServiceProvider"
             ],
             "aliases": {
-                "ApiResponser": "Multividas\\ApiResponser\\Facades\\ApiRepositoryFacade"
+                "ApiResponser": "Multividas\\ApiResponser\\Facades\\ApiResponser"
             }
         }
     }
