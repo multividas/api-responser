@@ -6,7 +6,7 @@
  * Website: https://www.multividas.com
  */
 
-namespace Multividas\ApiResponser\Tests\Traits;
+namespace Multividas\ApiResponser\Tests\Feature\Traits;
 
 trait ApiResponserTestTrait
 {

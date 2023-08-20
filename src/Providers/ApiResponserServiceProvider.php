@@ -17,7 +17,7 @@ class ApiResponserServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            $this->basePath('/config/api-responser.php') => $this->basePath('/config/api-responser.php')
+            $this->basePath('config/api-responser.php') => base_path('config/api-responser.php')
         ], 'api-responser-config');
     }
 

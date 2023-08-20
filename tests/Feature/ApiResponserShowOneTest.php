@@ -12,7 +12,7 @@ use Illuminate\Http\JsonResponse;
 use Multividas\ApiResponser\Tests\BaseTest;
 use Multividas\ApiResponser\Tests\Models\Post;
 use Multividas\ApiResponser\Facades\ApiResponser;
-use Multividas\ApiResponser\Tests\Traits\ApiResponserTestTrait;
+use Multividas\ApiResponser\Tests\Feature\Traits\ApiResponserTestTrait;
 
 class ApiResponserShowOneTest extends BaseTest
 {
