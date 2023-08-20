@@ -1,5 +1,7 @@
 <div align="center">
 
+<img width="150" height="150" src="./assets/api-responser.svg" alt="Query Option package logo"/>
+
 # API Responser
 
 [![Tests](https://github.com/multividas/api-responser/actions/workflows/php.yml/badge.svg)](https://github.com/multividas/api-responser/actions/workflows/php.yml)
