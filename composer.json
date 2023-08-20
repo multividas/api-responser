@@ -26,7 +26,7 @@
         }
     },
     "scripts": {
-        "test-feature": "vendor/bin/phpunit tests/Feature",
+        "test": "vendor/bin/phpunit tests/Feature",
         "php-psr": [
             "./vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 --extensions=php src/* tests/*"
         ]

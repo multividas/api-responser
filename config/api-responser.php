@@ -1,12 +1,8 @@
 <?php
 
 /**
- * Copyright (c) 2023 by Soulaimane Yahya.
- * All rights reserved.
- *
- * This code is developed by Soulaimane Yahya and is protected under international copyright laws.
- * Unauthorized reproduction, distribution, or modification of this code is strictly prohibited.
- *
+ * (c) 2023 Multividas inc. All rights reserved.
+ * Unauthorized use prohibited.
  * Website: https://www.multividas.com
  */
 

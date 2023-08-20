@@ -11,6 +11,7 @@ namespace Multividas\ApiResponser\Tests;
 use Orchestra\Testbench\TestCase;
 use Multividas\ApiResponser\Traits\ApiResponser;
 use Multividas\ApiResponser\Providers\ApiResponserServiceProvider;
+use Multividas\ApiResponser\Facades\ApiResponser as FacadesApiResponser;
 
 class BaseTest extends TestCase
 {
@@ -23,6 +24,13 @@ class BaseTest extends TestCase
     {
         return [
             ApiResponserServiceProvider::class
+        ];
+    }
+
+    protected function getPackageAliases($app): array
+    {
+        return [
+            'ApiResponser' => FacadesApiResponser::class
         ];
     }
 }

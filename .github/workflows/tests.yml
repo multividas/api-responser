@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Tests
 
 on:
   push:
@@ -26,5 +26,5 @@ jobs:
       - name: Validate PHP PSR
         run: composer run-script php-psr
 
-      - name: Run PHPUnit tests
-        run: composer run-script test-feature
+      - name: Run test suite
+        run: composer run-script test

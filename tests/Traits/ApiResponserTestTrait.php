@@ -10,6 +10,9 @@ namespace Multividas\ApiResponser\Tests\Traits;
 
 trait ApiResponserTestTrait
 {
+    /**
+     * @test
+     */
     public function testResponseStatusCode()
     {
         $response = $this->getApiResponse();
@@ -18,6 +21,9 @@ trait ApiResponserTestTrait
         $this->assertEquals(200, $responseStatusCode);
     }
 
+    /**
+     * @test
+     */
     public function testResponseStatusText()
     {
         $response = $this->getApiResponse();
@@ -26,6 +32,9 @@ trait ApiResponserTestTrait
         $this->assertEquals('OK', $responseStatusText);
     }
 
+    /**
+     * @test
+     */
     public function testResponseHeaders()
     {
         $response = $this->getApiResponse();
@@ -34,6 +43,9 @@ trait ApiResponserTestTrait
         $this->assertEquals('application/json', $responseHeaders->get('Content-Type'));
     }
 
+    /**
+     * @test
+     */
     public function testResponseJsonContent()
     {
         $response = $this->getApiResponse();
@@ -42,6 +54,9 @@ trait ApiResponserTestTrait
         $this->assertJson($responseJson);
     }
 
+    /**
+     * @test
+     */
     public function testResponseJsonStructure()
     {
         $response = $this->getApiResponse();
