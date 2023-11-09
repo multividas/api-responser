@@ -50,11 +50,5 @@
                 "ApiResponser": "Multividas\\ApiResponser\\Facades\\ApiResponser"
             }
         }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./../query-filters"
-        }
-    ]
+    }
 }
