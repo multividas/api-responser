@@ -1,0 +1,60 @@
+{
+    "name": "multividas/api-responser",
+    "description": "composer package to facilitates the process of structuring and generating API responses ",
+    "keywords": [
+        "api-responser"
+    ],
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "multividas inc",
+            "email": "contact@multividas.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Multividas\\ApiResponser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Multividas\\ApiResponser\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests/Feature",
+        "php-psr": [
+            "./vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 --extensions=php src/* tests/*"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "dev-develop",
+        "squizlabs/php_codesniffer": "4.0.x-dev",
+        "phpunit/phpunit": "9.6.x-dev",
+        "multividas/query-filters": "dev-main"
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Multividas\\ApiResponser\\Providers\\ApiResponserServiceProvider"
+            ],
+            "aliases": {
+                "ApiResponser": "Multividas\\ApiResponser\\Facades\\ApiResponser"
+            }
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./../query-filters"
+        }
+    ]
+}
