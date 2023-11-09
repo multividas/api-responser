@@ -6,7 +6,7 @@
 
 [![Tests](https://github.com/multividas/api-responser/actions/workflows/tests.yml/badge.svg)](https://github.com/multividas/api-responser/actions/workflows/tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/multividas/api-responser.svg?style=flat-square)](https://packagist.org/packages/multividas/api-responser)
-[![License](https://img.shields.io/github/license/multividas/api-responser?style=flat-square)](https://github.com/multividas/api-responser/blob/master/LICENSE.md)
+[![License](https://img.shields.io/github/license/multividas/api-responser?style=flat-square)](https://github.com/multividas/api-responser/blob/main/LICENSE)
 
 </div>
 
