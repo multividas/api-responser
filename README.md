@@ -107,6 +107,21 @@ class PostsController extends Controller
 
 This approach provides a cleaner and more organized way to interact with the `ApiRepositoryInterface` instance in your controller methods.
 
+### Success Response
+
+Successful response containing the requested data and an appropriate status code.
+
+```json
+{
+    "data": [
+        // ...
+    ],
+    "code": 200,
+    "meta": {}
+}
+```
+
+Learn more: [Multividas API Responser](https://developers.multividas.com/rest/introduction/api-responser)
 
 ---
 
