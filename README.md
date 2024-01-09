@@ -113,9 +113,7 @@ Successful response containing the requested data and an appropriate status code
 
 ```json
 {
-    "data": [
-        // ...
-    ],
+    "data": [],
     "code": 200,
     "meta": {}
 }
