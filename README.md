@@ -135,6 +135,6 @@ Need helps? Reach us
 
 > Multividas.com Ⓜ️
 
-> Email: contact@multividas.com
+> Email: multividasdotcom@gmail.com
 
 🌌 🚀
