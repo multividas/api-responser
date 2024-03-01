@@ -8,26 +8,26 @@
 
 namespace Multividas\ApiResponser\Interfaces;
 
-use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 interface ApiRepositoryInterface
 {
-    /**
-     * @JsonResponse Collection
-     */
     public function showAll(
         Collection|EloquentCollection|JsonResource $collection,
         int $code = 200,
         array $meta = []
     ): JsonResponse;
 
-    /**
-     * @JsonResponse instance
-     */
+    public function listAll(
+        Collection|EloquentCollection|JsonResource $collection,
+        int $code = 200,
+        array $meta = []
+    ): JsonResponse;
+
     public function showOne(
         Model|JsonResource $instance,
         int $code = 200,
