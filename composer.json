@@ -33,10 +33,10 @@
         "php": "^7.4 || ^8.0"
     },
     "require-dev": {
-        "orchestra/testbench": "dev-develop",
         "squizlabs/php_codesniffer": "4.0.x-dev",
         "phpunit/phpunit": "9.6.x-dev",
-        "multividas/query-filters": "dev-main"
+        "multividas/query-filters": "dev-main",
+        "orchestra/testbench": "8.x-dev"
     },
     "config": {
         "optimize-autoloader": true
