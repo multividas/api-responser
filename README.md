@@ -10,9 +10,10 @@
 
 </div>
 
-composer package to facilitates the process of structuring and generating API responses
+Composer package to facilitates the process of structuring and generating API responses
 
 ## Installation
+
 Require this package with composer.
 
 ```shell
