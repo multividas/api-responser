@@ -68,7 +68,7 @@ class ApiRepository implements ApiRepositoryInterface
         int $code = 200,
         array $meta = []
     ): JsonResponse {
-        $cachingData = QueryFilters::cacheData($collection);
+        $cachingData = QueryFilters::listAll($collection);
 
         return $this->successResponse([
             'data' => $cachingData,
