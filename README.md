@@ -45,13 +45,12 @@ class Controller extends BaseController
 }
 ```
 
-### Dependency Injection
+### ApiResponser Interface
 
-PostsController has __construct() method initializes a property apiRepository with an instance of the ApiRepositoryInterface.
+Using the `ApiResponser` interface methods.
 
-`showAll()` method receives **`Collection|JsonResource`** as its param.
-
-`showOne()` method receives **`Model|JsonResource $instance`** as its param.
+- `showAll()` method receives **`Collection|JsonResource`** as its param.
+- `showOne()` method receives **`Model|JsonResource $instance`** as its param.
 
 ```php
 use \Multividas\ApiResponser\Interfaces\ApiRepositoryInterface;
@@ -79,9 +78,9 @@ class PostsController extends Controller
 }
 ```
 
-### Facades
+### ApiResponser Facade
 
-Using the `ApiResponser` to access the methods of `ApiRepositoryInterface` in your `PostsController`.
+Using the `ApiResponser` facade design pattern.
 
 ```php
 use Multividas\ApiResponser\Facades\ApiResponser;
